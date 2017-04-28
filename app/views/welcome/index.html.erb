@@ -1,20 +1,105 @@
-<div class="col-md-12">
-   <div class="row box">
-     <div class="box-inner col-md-6 col-md-offset-3">
-       <h1 class="title">18K Offer</h1>
-       <p class="slogan">18K Offer 是一个提供18K薪水工作机会的求职网站。
-         <br>
-         我们希望借由这个网站，能让大家找到且应征上高薪且优质的工作。
-         <br>
-         凭借自己的努力和天份也会变 Winner
-       </p>
-       <p class="lead">
-         <%= link_to '马上应征', jobs_path, class: 'btn btn-danger' %>
-       </p>
-     </div>
-   </div>
- </div>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+</head>
+
+<!--
+       If you want to change #bootstrap-touch-slider id then you have to change Carousel-indicators and Carousel-Control  #bootstrap-touch-slider slide as well
+       Slide effect: slide, fade
+       Text Align: slide_style_center, slide_style_left, slide_style_right
+       Add Text Animation: https://daneden.github.io/animate.css/
+       -->
+<body>
+
+
+     <div id="bootstrap-touch-slider" class="carousel bs-slider slide  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+
+           <!-- Indicators -->
+           <ol class="carousel-indicators">
+               <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+               <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+               <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+           </ol>
+
+           <!-- Wrapper For Slides -->
+           <div class="carousel-inner" role="listbox">
+
+               <!-- Third Slide -->
+               <div class="item active">
+
+                   <!-- Slide Background -->
+                   <img src="https://images.pexels.com/photos/48726/pexels-photo-48726.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                   <div class="bs-slider-overlay"></div>
+
+                   <div class="container">
+                       <div class="row">
+                           <!-- Slide Text Layer -->
+                           <div class="slide-text slide_style_left">
+                               <h1 data-animation="animated zoomInRight">领航</h1>
+                               <p data-animation="animated fadeInLeft">引领你的职场航向</p>
+                               <p data-animation="animated fadeInLeft">领航，只给你最好的</p>
+                               <%= link_to("发布工作", new_job_path, class:"btn btn-default animated fadeInLeft") %>
+                               <%= link_to("应聘工作", jobs_path, class:"btn btn-primary animated fadeInRight") %>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <!-- End of Slide -->
+
+               <!-- Second Slide -->
+               <div class="item">
+
+                   <!-- Slide Background -->
+                   <img src="https://images.pexels.com/photos/207990/pexels-photo-207990.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                   <div class="bs-slider-overlay"></div>
+                   <!-- Slide Text Layer -->
+                   <div class="slide-text slide_style_center">
+                       <h1 data-animation="animated flipInX">领航</h1>
+                       <p data-animation="animated lightSpeedIn">是金子总会发光，最好的职位适合最好的你</p>
+                       <p data-animation="animated lightSpeedIn">用你的慧眼找到人生最佳航向</p>
+                       <%= link_to("发布工作", new_job_path,  class:"btn btn-default animated fadeInUp") %>
+                       <%= link_to("应聘工作", jobs_path, class:"btn btn-primary animated fadeInDown") %>
+                   </div>
+               </div>
+               <!-- End of Slide -->
+
+               <!-- Third Slide -->
+               <div class="item">
+
+                   <!-- Slide Background -->
+                   <img src="https://images.pexels.com/photos/144345/pexels-photo-144345.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                   <div class="bs-slider-overlay"></div>
+                   <!-- Slide Text Layer -->
+                   <div class="slide-text slide_style_right">
+                       <h1 data-animation="animated zoomInLeft">领航</h1>
+                       <p data-animation="animated fadeInRight">Lots of css3 Animations to make slide beautiful .</p>
+                       <%= link_to("发布工作", new_job_path, class:"btn btn-default animated fadeInLeft") %>
+                       <%= link_to("应聘工作", jobs_path, class:"btn btn-primary animated fadeInRight") %>
+                   </div>
+               </div>
+               <!-- End of Slide -->
+
+
+           </div><!-- End of Wrapper For Slides -->
+
+           <!-- Left Control -->
+           <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+               <span class="fa fa-angle-left" aria-hidden="true"></span>
+               <span class="sr-only">Previous</span>
+           </a>
+
+           <!-- Right Control -->
+           <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+               <span class="fa fa-angle-right" aria-hidden="true"></span>
+               <span class="sr-only">Next</span>
+           </a>
+
+       </div> <!-- End  bootstrap-touch-slider Slider -->
+
+  <!--3-->
  <div class="content-section-a">
    <div class="container">
      <div class="row">
@@ -62,3 +147,25 @@
      </div>
    </div>
  </div>
+
+ <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+
+    $('#bootstrap-touch-slider').bsTouchSlider();
+
+    </script>
+
+   <script>
+    $(document).ready(function () {
+    $('.material-button-toggle').click(function () {
+        $(this).toggleClass('open');
+        $('.option').toggleClass('scale-on');
+     });
+    });
+   </script>
+
+ </body>
+</html>
