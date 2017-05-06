@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
     namespace :admin do
     resources :jobs do
       member do
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
       end
       resources :resumes
     end
-  end
+    end
      resources :jobs do
        resources :resumes
          collection do
